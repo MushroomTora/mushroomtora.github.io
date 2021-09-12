@@ -388,18 +388,23 @@ window.onload = function () {
 };
 
 function reveal() {
-  
-  for (i=0;i<11;i++) {
+  let ballons = document.getElementsByClassName('balloon');
+  for (var i in ballons) {
+    if (ballons.hasOwnProperty(i)) {
+      ballons[i].setAttribute('style', 'display:none;');
+    }
+  }
+  for (i = 0; i < 11; i++) {
     let one = document.createElement("span"),
       two = document.createElement("span");
 
     one.setAttribute("class", "text-run");
-    one.setAttribute("id", "s"+i);
-    one.setAttribute("style", "position:absolute;top:-"+snowmaxsize);
+    one.setAttribute("id", "s" + i);
+    one.setAttribute("style", "position:absolute;top:-" + snowmaxsize);
     one.appendChild(document.createTextNode(snowletter));
     two.setAttribute("class", "text-run");
-    two.setAttribute("id", "s"+(i+11));
-    two.setAttribute("style", "position:absolute;top:-"+snowmaxsize);
+    two.setAttribute("id", "s" + (i + 11));
+    two.setAttribute("style", "position:absolute;top:-" + snowmaxsize);
     two.appendChild(document.createTextNode(snowletter2));
     document.body.prepend(one);
     document.body.prepend(two);
@@ -426,6 +431,7 @@ function reveal() {
   //ifrm.style.height = `${h}px`;
   ifrm.style.border = 'none';
   document.querySelector('#video').appendChild(ifrm);
+
 
 }
 
