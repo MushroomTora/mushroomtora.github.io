@@ -406,8 +406,8 @@ function reveal() {
     two.setAttribute("id", "s" + (i + 11));
     two.setAttribute("style", "position:absolute;top:-" + snowmaxsize);
     two.appendChild(document.createTextNode(snowletter2));
-    document.body.prepend(one);
-    document.body.prepend(two);
+    document.getElementById("text-animation").appendChild(one);
+    document.getElementById("text-animation").appendChild(two);
   }
 
   initsnow();
